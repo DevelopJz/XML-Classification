@@ -1,0 +1,119 @@
+ - Python3 연습 과제
+   - 2-1 Python3 XML Classification
+   - xml_search.py
+
+ - 사용 라이브러리 
+  - xml
+  - numpy
+
+ - 코드 설명  
+  - XML 파일에 접근하는 XML 라이브러리 사용, 상위 태그부터 각 태그 별 저장된 값들을 분류하여 리스트로 저장
+  - 태그 내 값들을 리스트로 출력 후 값 선택하여 검색
+
+ - 동작 결과
+  - 태그 별 값 출력
+COUNTRY :
+{'USA': 7, 'UK': 13, 'EU': 5, 'Norway': 1}
+COMPANY :
+{'Columbia': 2, 'CBS Records': 1, 'RCA': 1, 'Virgin records': 1, 'BMG': 1, 'Polydor': 3, 'CBS': 1, 'Pickwick': 1, 'Atlantic': 1, 'Mega': 1, 'Grammy': 1, 'Mucik Master': 1, 'WEA': 1, 'Island': 1, 'A and M': 1, 'Siren': 1, 'Capitol': 1, 'Medley': 1, 'DECCA': 1, 'Stax Records': 1, 'Elektra': 1, 'London': 1, 'EMI': 1}
+
+ARTIST :
+{'Bob Dylan': 1, 'Bonnie Tyler': 1, 'Dolly Parton': 1, 'Gary Moore': 1, 'Eros Ramazzotti': 1, 'Bee Gees': 1, 'Dr.Hook': 1, 'Rod Stewart': 1, 'Andrea Bocelli': 1, 'Percy Sledge': 1, 'Savage Rose': 1, 'Many': 1, 'Kenny Rogers': 1, 'Will Smith': 1, 'Van Morrison': 1, 'Jorn Hoel': 1, 'Cat Stevens': 1, 'Sam Brown': 1, "T'Pau": 1, 'Tina Turner': 1, 'Kim Larsen': 1, 'Luciano Pavarotti': 1, 'Otis Redding': 1, 'Simply Red': 1, 'The Communards': 1, 'Joe Cocker': 1}
+
+YEAR :
+{'1985': 2, '1988': 2, '1982': 1, '1990': 3, '1997': 2, '1998': 1, '1973': 1, '1996': 2, '1987': 4, '1995': 2, '1999': 1, '1971': 1, '1983': 2, '1991': 1, '1968': 1}
+
+TITLE :
+{'Empire Burlesque': 1, 'Hide your heart': 1, 'Greatest Hits': 1, 'Still got the blues': 1, 'Eros': 1, 'One night only': 1, 'Sylvias Mother': 1, 'Maggie May': 1, 'Romanza': 1, 'When a man loves a woman': 1, 'Black angel': 1, '1999 Grammy Nominees': 1, 'For the good times': 1, 'Big Willie style': 1, 'Tupelo Honey': 1, 'Soulsville': 1, 'The very best of': 1, 'Stop': 1, 'Bridge of Spies': 1, 'Private Dancer': 1, 'Midt om natten': 1, 'Pavarotti Gala Concert': 1, 'The dock of the bay': 1, 'Picture book': 1, 'Red': 1, 'Unchain my heart': 1}
+
+PRICE :
+{'10.90': 3, '9.90': 5, '10.20': 2, '8.10': 1, '8.50': 1, '10.80': 1, '8.70': 2, '8.20': 2, '7.90': 3, '8.90': 3, '7.80': 2, '7.20': 1}
+
+  - XML 검색
+   - 나라 태그 입력
+{'USA': 7, 'UK': 13, 'EU': 5, 'Norway': 1}
+나라 태그 : USA
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Bob Dylan
+YEAR : 1985
+TITLE : Empire Burlesque
+PRICE : 10.90
+COUNTRY : USA
+COMPANY : RCA
+ARTIST : Dolly Parton
+YEAR : 1982
+TITLE : Greatest Hits
+PRICE : 9.90
+COUNTRY : USA
+COMPANY : Atlantic
+ARTIST : Percy Sledge
+YEAR : 1987
+TITLE : When a man loves a woman
+PRICE : 8.70
+COUNTRY : USA
+COMPANY : Grammy
+ARTIST : Many
+YEAR : 1999
+TITLE : 1999 Grammy Nominees
+PRICE : 10.20
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Will Smith
+YEAR : 1997
+TITLE : Big Willie style
+PRICE : 9.90
+COUNTRY : USA
+COMPANY : Stax Records
+ARTIST : Otis Redding
+YEAR : 1968
+TITLE : The dock of the bay
+PRICE : 7.90
+COUNTRY : USA
+COMPANY : EMI
+ARTIST : Joe Cocker
+YEAR : 1987
+TITLE : Unchain my heart
+PRICE : 8.20
+{'Columbia': 2, 'RCA': 1, 'Atlantic': 1, 'Grammy': 1, 'Stax Records': 1, 'EMI': 1}
+회사 태그 :
+
+   - 회사 태그 입력
+{'Columbia': 2, 'RCA': 1, 'Atlantic': 1, 'Grammy': 1, 'Stax Records': 1, 'EMI': 1}
+회사 태그 : Columbia
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Bob Dylan
+YEAR : 1985
+TITLE : Empire Burlesque
+PRICE : 10.90
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Will Smith
+YEAR : 1997
+TITLE : Big Willie style
+PRICE : 9.90
+{'Bob Dylan': 1, 'Will Smith': 1}
+가수 태그 :
+
+   - 가수 태그 입력
+{'Bob Dylan': 1, 'Will Smith': 1}
+가수 태그 : Bob Dylan
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Bob Dylan
+YEAR : 1985
+TITLE : Empire Burlesque
+PRICE : 10.90
+{'1985': 1}
+연도 태그 :
+
+   - 연도 태그 입력
+{'1985': 1}
+연도 태그 : 1985
+COUNTRY : USA
+COMPANY : Columbia
+ARTIST : Bob Dylan
+YEAR : 1985
+TITLE : Empire Burlesque
+PRICE : 10.90
