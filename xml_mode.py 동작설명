@@ -14,9 +14,12 @@
 
  - 동작 결과
   - 사용할 모드 설정
+  -----코드 동작 출력-----
       사용할 모드 설정(1:xml 정보 추가  2:xml 정보 수정  3:xml 정보 삭제  4:종료)
+  -----------------------
 
   - 1 입력 / 정보 추가 모드
+  -----코드 동작 출력-----
       TITLE : Sample
       ARTIST : Example
       COUNTRY : Korea
@@ -24,10 +27,12 @@
       PRICE (float): 22.22
       YEAR (int): 2022
       추가 정보 입력? y/n
+  -----------------------
       
       #y 입력 시 추가 정보 저장 가능 / n 입력 시 xmlfile_Add.xml 파일로 기존 정보+추가 정보 저장
 
-   - 2 입력 / 정보 수정 모드
+  - 2 입력 / 정보 수정 모드
+  -----코드 동작 출력-----
       [COUNTRY, COMPANY, ARTIST, YEAR, TITLE, PRICE]
 
       검색할 태그 : YEAR
@@ -60,10 +65,12 @@
       YEAR : 1998
       TITLE : One night only
       PRICE : 10.90
+  -----------------------
       
       #수정할 정보 입력 후 xmlfile_Fix.xml 파일로 기존 정보를 수정한 정보 저장
    
-   - 3 입력 / 정보 삭제 모드
+  - 3 입력 / 정보 삭제 모드
+  -----코드 동작 출력-----
       [COUNTRY, COMPANY, ARTIST, YEAR, TITLE, PRICE]
 
       검색할 태그 : YEAR
@@ -85,5 +92,6 @@
       YEAR : 1998
       TITLE : One night only
       PRICE : 10.90
+  -----------------------
       
       #삭제할 정보 입력 후 기존 정보에서 선택한 정보 삭제 후 xmlfile_Delete.xml로 저장
