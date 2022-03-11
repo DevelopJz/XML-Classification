@@ -118,16 +118,14 @@ while True:
     pass
    elif again=="N" or again=="n":
     print("정보 입력 종료")
+    mode_num=4
+    indent(root)
+    ET.dump(root)
+    tree=ET.ElementTree(root)
+    tree.write(Lfilename+"_Add"+".xml")
     break
    else:
     break
-
-
-
-  indent(root)
-  ET.dump(root)
-  tree=ET.ElementTree(root)
-  tree.write(Lfilename+"_Add"+".xml")
 
  elif mode_num==2:
   #수정부분
@@ -182,6 +180,11 @@ while True:
      print(xmllist[tag_list[Findtag-1]])
      print(root[tag_list[Findtag-1]][2].text)
      root[tag_list[Findtag-1]][2].text=xmlcountry[tag_list[Findtag-1]]
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
    
     elif Fixtag=="COMPANY" or Fixtag=="company":
      print(xmlcompany[tag_list[Findtag-1]])
@@ -192,6 +195,11 @@ while True:
       xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i])
      print(xmllist[tag_list[Findtag-1]])
      root[tag_list[Findtag-1]][3].text=xmlcompany[tag_list[Findtag-1]]
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
      
     elif Fixtag=="ARTIST" or Fixtag=="artist":
      print(xmlartist[tag_list[Findtag-1]])
@@ -202,6 +210,11 @@ while True:
       xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i])
      print(xmllist[tag_list[Findtag-1]])
      root[tag_list[Findtag-1]][1].text=xmlartist[tag_list[Findtag-1]]
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
     
     elif Fixtag=="YEAR" or Fixtag=="year":
      print(xmlyear[tag_list[Findtag-1]])
@@ -218,6 +231,11 @@ while True:
       xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i])
      print(xmllist[tag_list[Findtag-1]])
      root[tag_list[Findtag-1]][5].text=xmlyear[tag_list[Findtag-1]]
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
    
     elif Fixtag=="TITLE" or Fixtag=="title":
      print(xmltitle[tag_list[Findtag-1]])
@@ -228,6 +246,11 @@ while True:
       xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i])
      print(xmllist[tag_list[Findtag-1]])
      root[tag_list[Findtag-1]][0].text=xmltitle[tag_list[Findtag-1]]
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
    
     elif Fixtag=="PRICE" or Fixtag=="price":
      print(xmlprice[tag_list[Findtag-1]])
@@ -243,11 +266,11 @@ while True:
       xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i])
      print(xmllist[tag_list[Findtag-1]])
      root[tag_list[Findtag-1]][4].text=xmlprice[tag_list[Findtag-1]]
-
-  indent(root)
-  ET.dump(root)
-  tree=ET.ElementTree(root)
-  tree.write(Lfilename+"_Fix"+".xml")
+     indent(root)
+     ET.dump(root)
+     tree=ET.ElementTree(root)
+     tree.write(Lfilename+"_Fix"+".xml")
+     mode_num=4
   
  elif mode_num==3:
   #삭제부분
@@ -287,11 +310,12 @@ while True:
     print(xmllist[tag_list[Findtag-1]])
     del xmllist[tag_list[Findtag-1]]
     root.remove(root[tag_list[Findtag-1]])
-
-  indent(root)
-  ET.dump(root)
-  tree=ET.ElementTree(root)
-  tree.write(Lfilename+"_Delete"+".xml")
+    indent(root)
+    ET.dump(root)
+    tree=ET.ElementTree(root)
+    tree.write(Lfilename+"_Delete"+".xml")
+    mode_num=4
+  
 
  elif mode_num==4:
   print("프로그램 종료")
