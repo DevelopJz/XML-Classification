@@ -1,0 +1,132 @@
+ - Python3 연습 과제
+   - 2-2 Python3 XML Classification
+   - xml_mode.py
+
+ - 사용 라이브러리 
+  - xml
+  - os
+  - subprocess
+  - sys
+  - time
+  - datetime
+  - lxml
+  - shutil
+
+ - 코드 설명  
+  - xsd파일을 통해 XML 파일의 유효성 검증, 검증 후 나라->회사->가수->연도 순으로 폴더를 만들어 자동 분류
+  - 분류 완료 후 태그별 검색 / 순서별 검색 및 수정 기능
+
+ - 동작 결과
+  - XML 파일 분류
+  -----코드 동작 출력-----
+      xml schema 파일 검증 완료
+      폴더가 존재하지 않아 생성합니다 (country)
+      xml 분석 및 분류 시작
+      xml 파일 분석 및 분류 완료
+      "분류 시간 표시"
+      파일 검색 및 수정
+      방식 : 1.태그별 검색 / 2.순서별 검색 및 수정 / 3. 프로그램 종료 (1/2/3)
+  -----------------------
+
+  - 1 입력 / 태그별 검색
+  -----코드 동작 출력-----
+      태그별 검색 : TITLE / ARTIST / COUNTRY / COMPANY / PRICE / YEAR
+      ARTIST
+      ['Eros Ramazzotti', 'Rod Stewart', 'Luciano Pavarotti', "T'Pau", 'Kim Larsen', 'Percy Sledge', 'Van Morrison', 'Will Smith', 'Otis Redding', 'Kenny Rogers', 'Savage Rose', 'Sam Brown', 'Cat Stevens', 'Gary Moore', 'Dolly Parton', 'Simply Red', 'Bonnie Tyler', 'Joe Cocker', 'Dr.Hook', 'Bob Dylan', 'The Communards', 'Andrea Bocelli', 'Jorn Hoel', 'Tina Turner', 'Many', 'Bee Gees']
+      ARTIST : Bee Gees
+  -----------------------
+  
+      #태그 선택 후 리스트 내에서 데이터 선택 시 해당되는 데이터가 저장된 폴더의 txt 파일 Open
+      #txt 파일 닫으면 다시 초기 화면으로 돌아가서 모드 선택 가능
+
+   - 2 입력 / 순서별 검색 및 수정
+   -----코드 동작 출력-----
+      순서별 검색 및 수정 : COUNTRY->COMPANY->ARTIST->YEAR->TITLE
+      ['USA', 'EU', 'Norway', 'UK']
+
+      나라 : EU
+      COUNTRY : EU
+      COMPANY : BMG
+      ARTIST : Eros Ramazzotti
+      YEAR : 1997
+      TITLE : Eros
+      PRICE : 9.90
+
+      COUNTRY : EU
+      COMPANY : Polydor
+      ARTIST : Andrea Bocelli
+      YEAR : 1996
+      TITLE : Romanza
+      PRICE : 10.80
+
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+
+      COUNTRY : EU
+      COMPANY : Medley
+      ARTIST : Kim Larsen
+      YEAR : 1983
+      TITLE : Midt om natten
+      PRICE : 7.80
+
+      COUNTRY : EU
+      COMPANY : Elektra
+      ARTIST : Simply Red
+      YEAR : 1985
+      TITLE : Picture book
+      PRICE : 7.20
+
+
+      회사 : Mega
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+
+
+      가수 : Savage Rose
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+
+
+      연도 : 1995
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+
+
+      제목 : Black angel
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+      
+      #데이터 특정 완료 했을 때 분류된 폴더의 저장된 txt 파일 Open, txt 파일 내용 수정 후 닫으면 하기와 같이 표기 후 저장
+
+      수정된 값
+      COUNTRY : EU
+      COMPANY : Mega
+      ARTIST : Savage Rose
+      YEAR : 1995
+      TITLE : Black angel
+      PRICE : 10.90
+
+      수정 완료
+   -----------------------
+   
+      #완료 후 다시 초기화면에서 모드 선택 가능
