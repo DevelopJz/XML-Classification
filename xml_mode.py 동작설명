@@ -1,0 +1,89 @@
+ - Python3 연습 과제
+   - 2-2 Python3 XML Classification
+   - xml_mode.py
+
+ - 사용 라이브러리 
+  - xml
+  - numpy
+  - os
+  - sys
+
+ - 코드 설명  
+  - XML 파일에 접근, 파일에 데이터 모드 별로 추가 / 수정 / 삭제 기능 구현
+  - 실행 후 파일명 다르게 저장 (ex) xmlfile_Add.xml / xmlfile_Fix.xml / xmlfile_Delete.xml
+
+ - 동작 결과
+  - 사용할 모드 설정
+      사용할 모드 설정(1:xml 정보 추가  2:xml 정보 수정  3:xml 정보 삭제  4:종료)
+
+  - 1 입력 / 정보 추가 모드
+      TITLE : Sample
+      ARTIST : Example
+      COUNTRY : Korea
+      COMPANY : Star
+      PRICE (float): 22.22
+      YEAR (int): 2022
+      추가 정보 입력? y/n
+      
+      #y 입력 시 추가 정보 저장 가능 / n 입력 시 xmlfile_Add.xml 파일로 기존 정보+추가 정보 저장
+
+   - 2 입력 / 정보 수정 모드
+      [COUNTRY, COMPANY, ARTIST, YEAR, TITLE, PRICE]
+
+      검색할 태그 : YEAR
+      ['1973', '1998', '1983', '1971', '1988', '1995', '1985', '1968', '1990', '1996', '1997', '1991', '1982', '1987', '1999']
+
+      검색 값 : 1998
+
+      COUNTRY : UK
+      COMPANY : Polydor
+      ARTIST : Bee Gees
+      YEAR : 1998
+      TITLE : One night only
+      PRICE : 10.90
+
+      수정할 정보(Number) : 1
+      COUNTRY : UK
+      COMPANY : Polydor
+      ARTIST : Bee Gees
+      YEAR : 1998
+      TITLE : One night only
+      PRICE : 10.90
+
+      수정할 태그(영어) : ARTIST
+      Bee Gees
+
+      수정할 값 : Bee
+      COUNTRY : UK
+      COMPANY : Polydor
+      ARTIST : Bee
+      YEAR : 1998
+      TITLE : One night only
+      PRICE : 10.90
+      
+      #수정할 정보 입력 후 xmlfile_Fix.xml 파일로 기존 정보를 수정한 정보 저장
+   
+   - 3 입력 / 정보 삭제 모드
+      [COUNTRY, COMPANY, ARTIST, YEAR, TITLE, PRICE]
+
+      검색할 태그 : YEAR
+      ['1968', '1999', '1996', '1991', '1998', '1995', '1983', '1971', '1973', '1990', '1997', '1987', '1985', '1982', '1988']
+
+      검색 값 : 1998
+
+      COUNTRY : UK
+      COMPANY : Polydor
+      ARTIST : Bee Gees
+      YEAR : 1998
+      TITLE : One night only
+      PRICE : 10.90
+
+      삭제할 정보(Number) : 1
+      COUNTRY : UK
+      COMPANY : Polydor
+      ARTIST : Bee Gees
+      YEAR : 1998
+      TITLE : One night only
+      PRICE : 10.90
+      
+      #삭제할 정보 입력 후 기존 정보에서 선택한 정보 삭제 후 xmlfile_Delete.xml로 저장
