@@ -315,7 +315,7 @@ while True:
     tree=ET.ElementTree(root)
     tree.write(Lfilename+"_Delete"+".xml")
     mode_num=4
-  
+ 
 
  elif mode_num==4:
   print("프로그램 종료")
