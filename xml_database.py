@@ -194,7 +194,7 @@ def classify():
 findsome="<CD>"
 count=0
 findproblem=0
-
+clsflag=0
 printflag=0
 endflag=0
  
@@ -260,23 +260,27 @@ for i in range(0,count):
  xmllist.append("COUNTRY : "+xmlcountry[i]+"\n"+"COMPANY : "+xmlcompany[i]+"\n"+"ARTIST : "+xmlartist[i]+"\n"+"YEAR : "+xmlyear[i]+"\n"+"TITLE : "+xmltitle[i]+"\n"+"PRICE : "+xmlprice[i]+"\n")
  
 while True:
- startTime=time.time()
- if not os.path.isdir("./xmlfiles/country/"):   
-  print("폴더가 존재하지 않아 생성합니다 (country)")                                                        
-  os.mkdir("./xmlfiles/country/")
+ if clsflag==0:
+  startTime=time.time()
+  if not os.path.isdir("./xmlfiles/country/"):   
+   print("폴더가 존재하지 않아 생성합니다 (country)")                                                        
+   os.mkdir("./xmlfiles/country/")
+  else:
+   print("폴더가 이미 존재합니다 (country)")
+  
+  print("xml 분석 및 분류 시작")
+ 
+  classify()
+  
+  print("xml 파일 분석 및 분류 완료")
+
+  sec=time.time()-startTime
+  times=str(datetime.timedelta(seconds=sec)).split(".")
+  times=times[0]
+  print(times)
+  clsflag=1
  else:
-  print("폴더가 이미 존재합니다 (country)")
- 
- print("xml 분석 및 분류 시작")
-
- classify()
- 
- print("xml 파일 분석 및 분류 완료")
-
- sec=time.time()-startTime
- times=str(datetime.timedelta(seconds=sec)).split(".")
- times=times[0]
- print(times)
+  pass
 
  print("파일 검색 및 수정")
  while True:
